@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059" />
+      <stop offset="50%" stop-color="#8B7668" />
+      <stop offset="100%" stop-color="#C5A059" />
+    </linearGradient>
+  </defs>
+  <!-- Stylized Bismillah calligraphic SVG text representation -->
+  <text x="250" y="75" font-family="'Amiri', 'Reem Kufi', serif" font-size="46" font-weight="bold" fill="url(#goldText)" text-anchor="middle" direction="rtl">
+    بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+  </text>
+  <path d="M 150 95 Q 250 110 350 95" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <circle cx="250" cy="102" r="3" fill="#C5A059"/>
+</svg>

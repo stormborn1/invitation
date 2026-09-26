@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" width="100%" height="100%">
+  <path d="M 10 20 L 110 20 Q 150 5 190 20 L 290 20" stroke="#C5A059" stroke-width="1" fill="none" opacity="0.6"/>
+  <circle cx="150" cy="20" r="4" fill="#C98F9D"/>
+  <circle cx="130" cy="20" r="2.5" fill="#C5A059"/>
+  <circle cx="170" cy="20" r="2.5" fill="#C5A059"/>
+  <!-- Islamic Star Accent in center -->
+  <path d="M 150 10 L 153 17 L 160 20 L 153 23 L 150 30 L 147 23 L 140 20 L 147 17 Z" fill="#C5A059" opacity="0.8"/>
+</svg>

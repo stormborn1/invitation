@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350" width="100%" height="100%">
+  <defs>
+    <radialGradient id="deepRoseRight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E9B8C4" />
+      <stop offset="70%" stop-color="#C98F9D" />
+      <stop offset="100%" stop-color="#A56373" />
+    </radialGradient>
+    <filter id="shadowRight04" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="-5" dy="8" stdDeviation="8" flood-color="#4A5848" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadowRight04)">
+    <!-- Golden Berry Stems coming from right edge (x=360) -->
+    <path d="M360 220 Q280 160 170 140 T40 100" stroke="#C5A059" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <circle cx="230" cy="145" r="7" fill="#C5A059"/>
+    <circle cx="190" cy="135" r="8" fill="#E0C078"/>
+    <circle cx="140" cy="120" r="6" fill="#C5A059"/>
+    <circle cx="90" cy="108" r="7" fill="#E0C078"/>
+
+    <!-- Serrated Leaf Backing -->
+    <path d="M260 230 C200 240 140 280 120 220 C170 190 230 200 260 230 Z" fill="#5E705B" opacity="0.9"/>
+    <path d="M280 160 C230 130 180 140 170 90 C210 90 260 120 280 160 Z" fill="#7A8F76" opacity="0.85"/>
+
+    <!-- Deep Rose Bloom (Right) -->
+    <g transform="translate(200, 200)">
+      <circle cx="0" cy="0" r="80" fill="url(#deepRoseRight)"/>
+      <circle cx="-5" cy="-5" r="64" fill="#C98F9D"/>
+      <circle cx="5" cy="5" r="48" fill="#E9B8C4"/>
+      <circle cx="-3" cy="-3" r="34" fill="#F4DCE2"/>
+      <circle cx="2" cy="2" r="20" fill="#C98F9D"/>
+      <circle cx="0" cy="0" r="9" fill="#C5A059"/>
+    </g>
+  </g>
+</svg>

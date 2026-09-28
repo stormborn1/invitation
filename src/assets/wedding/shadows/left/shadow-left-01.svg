@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 800" width="100%" height="100%">
+  <!-- Soft floral shadow silhouette originating from Left edge -->
+  <g fill="#5E705B" opacity="0.35" filter="blur(8px)">
+    <path d="M-30 0 Q100 200 40 450 T90 850 T-20 1200" stroke="#5E705B" stroke-width="25" fill="none"/>
+    <circle cx="90" cy="180" r="85"/>
+    <circle cx="120" cy="480" r="95"/>
+    <circle cx="85" cy="750" r="80"/>
+  </g>
+</svg>

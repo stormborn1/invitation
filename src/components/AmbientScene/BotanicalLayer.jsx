@@ -12,10 +12,11 @@ export default function BotanicalLayer() {
       // 1. Sway Background Elements
       botanicalSceneConfig.backgroundElements.forEach((elConfig) => {
         const el = document.getElementById(elConfig.id);
-        if (el) {
+        if (el && elConfig.sway) {
           gsap.to(el, {
-            rotation: `+=${elConfig.sway.rotDeg}`,
-            x: `+=${elConfig.sway.xPx}`,
+            rotation: `+=${elConfig.sway.rotDeg || 0}`,
+            x: `+=${elConfig.sway.xPx || 0}`,
+            y: `+=${elConfig.sway.yPx || 0}`,
             duration: elConfig.sway.duration,
             delay: elConfig.sway.delay,
             ease: 'sine.inOut',
@@ -28,10 +29,11 @@ export default function BotanicalLayer() {
       // 2. Sway Midground Elements
       botanicalSceneConfig.midgroundElements.forEach((elConfig) => {
         const el = document.getElementById(elConfig.id);
-        if (el) {
+        if (el && elConfig.sway) {
           gsap.to(el, {
-            rotation: `+=${elConfig.sway.rotDeg}`,
-            x: `+=${elConfig.sway.xPx}`,
+            rotation: `+=${elConfig.sway.rotDeg || 0}`,
+            x: `+=${elConfig.sway.xPx || 0}`,
+            y: `+=${elConfig.sway.yPx || 0}`,
             duration: elConfig.sway.duration,
             delay: elConfig.sway.delay,
             ease: 'sine.inOut',
@@ -41,14 +43,14 @@ export default function BotanicalLayer() {
         }
       });
 
-      // 3. Sway Foreground Large Flowers (Wind Sway)
+      // 3. Sway Foreground Large Hero Flowers & Leaves
       botanicalSceneConfig.foregroundFlowers.forEach((fl) => {
         const el = document.getElementById(fl.id);
-        if (el) {
+        if (el && fl.sway) {
           gsap.to(el, {
-            rotation: `+=${fl.sway.rotDeg}`,
-            x: `+=${fl.sway.xPx}`,
-            y: `+=${fl.sway.yPx}`,
+            rotation: `+=${fl.sway.rotDeg || 0}`,
+            x: `+=${fl.sway.xPx || 0}`,
+            y: `+=${fl.sway.yPx || 0}`,
             duration: fl.sway.duration,
             delay: fl.sway.delay,
             ease: 'sine.inOut',
@@ -64,7 +66,7 @@ export default function BotanicalLayer() {
 
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none select-none overflow-hidden z-40">
-      {/* DEPTH 1: BACKGROUND (Z-10) */}
+      {/* DEPTH 1: BACKGROUND GARLANDS & SHADOWS (Z-10) */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         {botanicalSceneConfig.backgroundElements.map((br) => {
           const url = getAssetUrl(br.assetCategory, br.assetKey);
@@ -72,16 +74,18 @@ export default function BotanicalLayer() {
           const style = {
             position: 'absolute',
             top: br.top,
+            bottom: br.bottom,
             left: br.left,
             right: br.right,
             width: br.width,
             opacity: br.opacity,
+            transformOrigin: br.side === 'right' ? 'top right' : 'top left',
           };
-          return <img key={br.id} id={br.id} src={url} alt="" style={style} className="object-contain filter blur-[0.5px]" />;
+          return <img key={br.id} id={br.id} src={url} alt="" style={style} className="object-contain filter blur-[0.4px]" />;
         })}
       </div>
 
-      {/* DEPTH 2: MIDGROUND LEAVES (Z-30 - IN FRONT OF CONTENT ON MOBILE) */}
+      {/* DEPTH 2: MIDGROUND LEAVES, FERNS, BLOOMS & BIRDS (Z-30) */}
       <div className="absolute inset-0 z-30 pointer-events-none">
         {botanicalSceneConfig.midgroundElements.map((lf) => {
           const url = getAssetUrl(lf.assetCategory, lf.assetKey);
@@ -89,18 +93,20 @@ export default function BotanicalLayer() {
           const style = {
             position: 'absolute',
             top: lf.top,
+            bottom: lf.bottom,
             left: lf.left,
             right: lf.right,
-            width: lf.size,
-            height: lf.size,
-            transform: `rotate(${lf.rotation}deg)`,
+            width: lf.width || lf.size,
+            height: lf.height || 'auto',
+            transform: `rotate(${lf.rotation || 0}deg)`,
+            transformOrigin: lf.side === 'right' ? 'center right' : 'center left',
             opacity: lf.opacity,
           };
-          return <img key={lf.id} id={lf.id} src={url} alt="" style={style} className="object-contain drop-shadow-md" />;
+          return <img key={lf.id} id={lf.id} src={url} alt="" style={style} className="object-contain filter drop-shadow-md" />;
         })}
       </div>
 
-      {/* DEPTH 3: FOREGROUND LARGE FLOWERS (Z-50 - GUARANTEED IN FRONT ON MOBILE & DESKTOP) */}
+      {/* DEPTH 3: FOREGROUND VERY LARGE HERO BLOOMS & LEAF CLUSTERS EMERGING FROM OFF-SCREEN (Z-50) */}
       <div className="absolute inset-0 z-50 pointer-events-none">
         {botanicalSceneConfig.foregroundFlowers.map((fl) => {
           const url = getAssetUrl(fl.assetCategory, fl.assetKey);
@@ -112,7 +118,10 @@ export default function BotanicalLayer() {
             bottom: fl.bottom,
             left: fl.left,
             right: fl.right,
-            transform: `rotate(${fl.rotation}deg)`,
+            width: fl.width || fl.size,
+            height: fl.height || 'auto',
+            transform: `rotate(${fl.rotation || 0}deg)`,
+            transformOrigin: fl.side === 'right' ? 'center right' : 'center left',
             opacity: fl.opacity,
           };
 
@@ -121,12 +130,12 @@ export default function BotanicalLayer() {
               key={fl.id}
               id={fl.id}
               style={style}
-              className="w-[125px] h-[125px] sm:w-[170px] sm:h-[170px] md:w-[240px] md:h-[240px] transition-all transform-gpu"
+              className="transition-all transform-gpu pointer-events-none"
             >
               <img
                 src={url}
                 alt=""
-                className="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(139,118,104,0.35)]"
+                className="w-full h-auto object-contain filter drop-shadow-[0_14px_28px_rgba(139,118,104,0.36)]"
               />
             </div>
           );

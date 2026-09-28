@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 800" width="100%" height="100%">
+  <!-- Secondary leaf shadow silhouette for left midground depth -->
+  <g fill="#4A5848" opacity="0.28" filter="blur(12px)">
+    <path d="M-20 100 Q120 300 60 550 T100 800" stroke="#4A5848" stroke-width="20" fill="none"/>
+    <ellipse cx="140" cy="280" rx="90" ry="50"/>
+    <ellipse cx="110" cy="600" rx="100" ry="60"/>
+  </g>
+</svg>

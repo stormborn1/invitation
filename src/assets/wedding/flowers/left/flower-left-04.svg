@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350" width="100%" height="100%">
+  <defs>
+    <radialGradient id="blushRanunculusLeft" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#F4DCE2" />
+      <stop offset="70%" stop-color="#E9B8C4" />
+      <stop offset="100%" stop-color="#C98F9D" />
+    </radialGradient>
+    <filter id="shadowLeft04" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="5" dy="8" stdDeviation="8" flood-color="#5E705B" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadowLeft04)">
+    <!-- Vine & Fern Leaves reaching up-right from left edge -->
+    <path d="M-10 280 Q70 200 130 180 T260 140" stroke="#5E705B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M60 210 C120 180 180 200 170 160 C120 150 70 180 60 210 Z" fill="#A8B7A0" opacity="0.9"/>
+    <path d="M120 170 C180 140 240 160 230 120 C180 110 130 140 120 170 Z" fill="#5E705B" opacity="0.85"/>
+
+    <!-- Ranunculus Dense Petals Cluster (Left) -->
+    <g transform="translate(160, 190)">
+      <circle cx="0" cy="0" r="75" fill="url(#blushRanunculusLeft)"/>
+      <circle cx="-6" cy="-6" r="62" fill="#E9B8C4"/>
+      <circle cx="4" cy="4" r="50" fill="#F4DCE2"/>
+      <circle cx="-3" cy="-3" r="38" fill="#C98F9D"/>
+      <circle cx="2" cy="2" r="26" fill="#E9B8C4"/>
+      <circle cx="-1" cy="-1" r="16" fill="#F4DCE2"/>
+      <circle cx="0" cy="0" r="8" fill="#C5A059"/>
+    </g>
+
+    <!-- Companion Hydrangea Florets (Left edge origin) -->
+    <g transform="translate(70, 130)">
+      <path d="M-15 -15 L15 -15 L15 15 L-15 15 Z" fill="#F4DCE2" transform="rotate(12)"/>
+      <circle cx="0" cy="0" r="4" fill="#C98F9D"/>
+    </g>
+    <g transform="translate(95, 100)">
+      <path d="M-12 -12 L12 -12 L12 12 L-12 12 Z" fill="#E9B8C4" transform="rotate(25)"/>
+      <circle cx="0" cy="0" r="3" fill="#C5A059"/>
+    </g>
+  </g>
+</svg>

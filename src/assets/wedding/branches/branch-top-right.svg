@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 250" width="100%" height="100%">
+  <defs>
+    <filter id="branchShadowR" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="-2" dy="5" stdDeviation="4" flood-color="#8B7668" flood-opacity="0.2" />
+    </filter>
+  </defs>
+  <g filter="url(#branchShadowR)">
+    <path d="M380 -30 C290 80 170 120 -10 140" stroke="#5E705B" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M310 30 C230 140 130 180 30 230" stroke="#8B7668" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M300 40 C330 10 350 40 325 65 C300 90 280 60 300 40 Z" fill="#5E705B" opacity="0.9"/>
+    <path d="M260 65 C220 35 200 70 225 90 C250 110 280 85 260 65 Z" fill="#A8B7A0" opacity="0.85"/>
+    <path d="M190 95 C160 65 130 90 150 115 C170 140 210 115 190 95 Z" fill="#5E705B" opacity="0.95"/>
+    <path d="M120 115 C80 90 60 120 85 140 C110 160 140 135 120 115 Z" fill="#A8B7A0" opacity="0.9"/>
+    <path d="M60 130 C20 110 5 135 25 150 C45 165 75 145 60 130 Z" fill="#5E705B" opacity="0.85"/>
+    <circle cx="240" cy="85" r="16" fill="#F4DCE2"/>
+    <circle cx="240" cy="85" r="9" fill="#E9B8C4"/>
+    <circle cx="140" cy="110" r="18" fill="#E9B8C4"/>
+    <circle cx="140" cy="110" r="10" fill="#C98F9D"/>
+    <circle cx="70" cy="130" r="14" fill="#C5A059" opacity="0.9"/>
+  </g>
+</svg>

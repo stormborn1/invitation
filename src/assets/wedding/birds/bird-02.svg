@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90" width="100%" height="100%">
+  <defs>
+    <linearGradient id="birdGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059" />
+      <stop offset="50%" stop-color="#E9B8C4" />
+      <stop offset="100%" stop-color="#5E705B" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(120,0) scale(-1,1)">
+    <path d="M20 45 C15 30 35 15 55 20 C75 25 90 40 115 45 C100 55 75 68 50 65 C30 62 22 55 20 45 Z" fill="url(#birdGrad2)"/>
+    <path d="M45 28 C60 22 80 32 85 45 C75 52 55 48 45 28 Z" fill="#F4DCE2" opacity="0.9"/>
+    <circle cx="32" cy="28" r="13" fill="#F4DCE2"/>
+    <circle cx="28" cy="25" r="2" fill="#4B403B"/>
+    <polygon points="20,28 10,31 20,34" fill="#C5A059"/>
+    <path d="M105 45 L125 50 L110 56 Z" fill="#8B7668"/>
+  </g>
+</svg>

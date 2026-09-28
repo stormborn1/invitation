@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 450" width="100%" height="100%">
+  <!-- Thick organic vine curving down-right from upper-left edge (x=0) with attached buds -->
+  <path d="M-20 -20 Q80 150 40 280 T90 470" stroke="#5E705B" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M-10 0 Q100 170 50 300 T100 450" stroke="#8B7668" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Left Side Buds & Leaf Clusters -->
+  <g fill="#A8B7A0" opacity="0.9">
+    <path d="M50 120 C100 100 140 120 130 80 C90 70 50 100 50 120 Z" fill="#5E705B"/>
+    <path d="M35 240 C90 220 130 240 120 200 C80 190 40 220 35 240 Z" fill="#A8B7A0"/>
+    <path d="M60 360 C120 340 160 360 150 320 C110 310 70 340 60 360 Z" fill="#7A8F76"/>
+  </g>
+
+  <!-- Blush Flower Bud attached at mid branch -->
+  <g transform="translate(105, 210) scale(0.45)">
+    <circle cx="0" cy="0" r="30" fill="#E9B8C4"/>
+    <circle cx="-3" cy="-3" r="20" fill="#F4DCE2"/>
+    <circle cx="0" cy="0" r="8" fill="#C5A059"/>
+  </g>
+</svg>

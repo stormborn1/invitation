@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 450" width="100%" height="100%">
+  <!-- Twisted wooden branch sweeping down-left from upper-RIGHT edge (x=270) with white blossoms -->
+  <path d="M270 -20 Q170 140 210 270 T160 470" stroke="#4A5848" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M260 -10 Q150 160 200 290 T150 450" stroke="#8B7668" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Right Side Blossoms & Leaf Fronds -->
+  <g fill="#5E705B" opacity="0.95">
+    <path d="M200 110 C140 90 100 120 110 70 C150 60 190 90 200 110 Z" fill="#7A8F76"/>
+    <path d="M215 230 C155 210 115 240 125 190 C165 180 205 210 215 230 Z" fill="#5E705B"/>
+    <path d="M190 350 C130 330 90 360 100 310 C140 300 180 330 190 350 Z" fill="#A8B7A0"/>
+  </g>
+
+  <!-- Cream Blossom attached at right branch -->
+  <g transform="translate(150, 190) scale(0.48)">
+    <circle cx="0" cy="0" r="32" fill="#FDFBF7"/>
+    <circle cx="2" cy="2" r="22" fill="#E5D3BD"/>
+    <circle cx="0" cy="0" r="8" fill="#C5A059"/>
+  </g>
+</svg>

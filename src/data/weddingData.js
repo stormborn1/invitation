@@ -4,10 +4,10 @@
 export const weddingData = {
   couple: {
     brideName: "Sultana Tabasum",
-    groomName: "Jawed Ansari",
+    groomName: "Belal Ansari",
     brideInitial: "S",
-    groomInitial: "J",
-    monogram: "S ♥ J",
+    groomInitial: "B",
+    monogram: "S ♥ B",
     subtitle: "A journey of two souls bound by faith, love, and grace."
   },
 

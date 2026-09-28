@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
-import gsap from 'gsap';
-import confetti from 'canvas-confetti';
-import Seal from './Seal';
-import { weddingData } from '../../data/weddingData';
-import { getAssetUrl } from '../../config/assetRegistry';
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import confetti from "canvas-confetti";
+import Seal from "./Seal";
+import { weddingData } from "../../data/weddingData";
+import { getAssetUrl } from "../../config/assetRegistry";
 
 export default function InvitationGate({ onGateOpen }) {
   const containerRef = useRef(null);
@@ -24,7 +24,7 @@ export default function InvitationGate({ onGateOpen }) {
       particleCount: 50,
       spread: 70,
       origin: { y: 0.5 },
-      colors: ['#E9B8C4', '#C98F9D', '#C5A059', '#FBF7F1', '#A8B7A0'],
+      colors: ["#E9B8C4", "#C98F9D", "#C5A059", "#FBF7F1", "#A8B7A0"],
       disableForReducedMotion: true,
     });
 
@@ -32,62 +32,86 @@ export default function InvitationGate({ onGateOpen }) {
       const tl = gsap.timeline({
         onComplete: () => {
           if (onGateOpen) onGateOpen();
-        }
+        },
       });
 
       // 1. Seal compresses and pulses
       tl.to(sealContainerRef.current, {
         scale: 0.88,
         duration: 0.25,
-        ease: 'power2.in',
+        ease: "power2.in",
       })
-      .to(sealContainerRef.current, {
-        scale: 1.15,
-        duration: 0.35,
-        ease: 'back.out(2)',
-      })
-      // 2. Seam glow line expands
-      .to(seamRef.current, {
-        opacity: 1,
-        width: '6px',
-        duration: 0.3,
-      }, "-=0.2")
-      .to(glowLightRef.current, {
-        opacity: 1,
-        scale: 3,
-        duration: 0.6,
-        ease: 'power2.out',
-      }, "-=0.1")
-      // 3. Seal fades & scales up into split
-      .to(sealContainerRef.current, {
-        opacity: 0,
-        scale: 1.4,
-        duration: 0.4,
-        ease: 'power2.in',
-      }, "-=0.2")
-      // 4. Split Left and Right Gate Panels
-      .to(leftPanelRef.current, {
-        xPercent: -100,
-        duration: 1.4,
-        ease: 'power3.inOut',
-      }, "-=0.2")
-      .to(rightPanelRef.current, {
-        xPercent: 100,
-        duration: 1.4,
-        ease: 'power3.inOut',
-      }, "<")
-      // 5. Overall Container Fade Out
-      .to(containerRef.current, {
-        opacity: 0,
-        duration: 0.5,
-        pointerEvents: 'none',
-      }, "-=0.4");
+        .to(sealContainerRef.current, {
+          scale: 1.15,
+          duration: 0.35,
+          ease: "back.out(2)",
+        })
+        // 2. Seam glow line expands
+        .to(
+          seamRef.current,
+          {
+            opacity: 1,
+            width: "6px",
+            duration: 0.3,
+          },
+          "-=0.2",
+        )
+        .to(
+          glowLightRef.current,
+          {
+            opacity: 1,
+            scale: 3,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "-=0.1",
+        )
+        // 3. Seal fades & scales up into split
+        .to(
+          sealContainerRef.current,
+          {
+            opacity: 0,
+            scale: 1.4,
+            duration: 0.4,
+            ease: "power2.in",
+          },
+          "-=0.2",
+        )
+        // 4. Split Left and Right Gate Panels
+        .to(
+          leftPanelRef.current,
+          {
+            xPercent: -100,
+            duration: 1.4,
+            ease: "power3.inOut",
+          },
+          "-=0.2",
+        )
+        .to(
+          rightPanelRef.current,
+          {
+            xPercent: 100,
+            duration: 1.4,
+            ease: "power3.inOut",
+          },
+          "<",
+        )
+        // 5. Overall Container Fade Out
+        .to(
+          containerRef.current,
+          {
+            opacity: 0,
+            duration: 0.5,
+            pointerEvents: "none",
+          },
+          "-=0.4",
+        );
     }, containerRef);
   };
 
-  const cornerOrnamentUrl = getAssetUrl('ornaments', 'cornerOrnament');
-  const flower01Url = getAssetUrl('flowers', 'flower02');
-  const flower02Url = getAssetUrl('flowers', 'flower02');
+  const cornerOrnamentUrl = getAssetUrl("ornaments", "cornerOrnament");
+  const flower01Url = getAssetUrl("invitationGate.flowers.left", "flowerLeft") || getAssetUrl("invitationGate.flowers.left");
+  const flower02Url = getAssetUrl("invitationGate.flowers.right", "flowerRight") || getAssetUrl("invitationGate.flowers.right");
 
   return (
     <div
@@ -107,17 +131,35 @@ export default function InvitationGate({ onGateOpen }) {
       >
         {/* Top Left Embossed Corner Ornament */}
         <div className="w-20 h-20 md:w-32 md:h-32 opacity-70">
-          {cornerOrnamentUrl && <img src={cornerOrnamentUrl} alt="" className="w-full h-full object-contain" />}
+          {cornerOrnamentUrl && (
+            <img
+              src={cornerOrnamentUrl}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          )}
         </div>
 
         {/* Outer Left Botanical Trim */}
         <div className="absolute top-1/3 -left-6 w-32 md:w-48 opacity-80 pointer-events-none">
-          {flower01Url && <img src={flower01Url} alt="" className="w-full h-auto transform -rotate-12" />}
+          {flower01Url && (
+            <img
+              src={flower01Url}
+              alt=""
+              className="w-[1000px] h-auto transform -rotate-12"
+            />
+          )}
         </div>
 
         {/* Bottom Left Corner Ornament */}
         <div className="w-20 h-20 md:w-32 md:h-32 opacity-70 transform rotate-270">
-          {cornerOrnamentUrl && <img src={cornerOrnamentUrl} alt="" className="w-full h-full object-contain" />}
+          {cornerOrnamentUrl && (
+            <img
+              src={cornerOrnamentUrl}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          )}
         </div>
       </div>
 
@@ -128,17 +170,35 @@ export default function InvitationGate({ onGateOpen }) {
       >
         {/* Top Right Corner Ornament */}
         <div className="w-20 h-20 md:w-32 md:h-32 opacity-70 transform rotate-90">
-          {cornerOrnamentUrl && <img src={cornerOrnamentUrl} alt="" className="w-full h-full object-contain" />}
+          {cornerOrnamentUrl && (
+            <img
+              src={cornerOrnamentUrl}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          )}
         </div>
 
         {/* Outer Right Botanical Trim */}
         <div className="absolute top-1/3 -right-6 w-32 md:w-48 opacity-80 pointer-events-none">
-          {flower02Url && <img src={flower02Url} alt="" className="w-full h-auto transform rotate-12" />}
+          {flower02Url && (
+            <img
+              src={flower02Url}
+              alt=""
+              className="w-full h-auto transform rotate-12"
+            />
+          )}
         </div>
 
         {/* Bottom Right Corner Ornament */}
         <div className="w-20 h-20 md:w-32 md:h-32 opacity-70 transform rotate-180">
-          {cornerOrnamentUrl && <img src={cornerOrnamentUrl} alt="" className="w-full h-full object-contain" />}
+          {cornerOrnamentUrl && (
+            <img
+              src={cornerOrnamentUrl}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          )}
         </div>
       </div>
 

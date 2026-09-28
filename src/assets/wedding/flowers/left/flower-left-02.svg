@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350" width="100%" height="100%">
+  <defs>
+    <radialGradient id="dahliaPeachLeft" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#F3C5BC" />
+      <stop offset="60%" stop-color="#E8A598" />
+      <stop offset="100%" stop-color="#D88677" />
+    </radialGradient>
+    <filter id="shadowLeft02" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="5" dy="9" stdDeviation="8" flood-color="#4A5848" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadowLeft02)">
+    <!-- Eucalyptus branch reaching inward from left -->
+    <path d="M-20 220 C60 210 140 250 220 270" stroke="#4A5848" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <circle cx="160" cy="245" r="28" fill="#8A9A86" opacity="0.9"/>
+    <circle cx="210" cy="260" r="22" fill="#A8B7A0" opacity="0.95"/>
+    <circle cx="110" cy="225" r="32" fill="#5E705B" opacity="0.85"/>
+
+    <!-- Pointed Dahlia Petals Array facing down-right -->
+    <g transform="translate(150, 150)">
+      <!-- Outer Layer Petals -->
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(0)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(30)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(60)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(90)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(120)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(150)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(180)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(210)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(240)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(270)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(300)"/>
+      <path d="M0 0 L-20 -110 L20 -110 Z" fill="url(#dahliaPeachLeft)" transform="rotate(330)"/>
+
+      <!-- Inner Layer Petals offset -->
+      <g transform="scale(0.72) rotate(15)">
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(0)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(45)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(90)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(135)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(180)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(225)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(270)"/>
+        <path d="M0 0 L-18 -100 L18 -100 Z" fill="#F3C5BC" transform="rotate(315)"/>
+      </g>
+
+      <!-- Center Gold Core -->
+      <circle cx="0" cy="0" r="28" fill="#E8A598"/>
+      <circle cx="0" cy="0" r="18" fill="#C5A059"/>
+      <circle cx="0" cy="0" r="9" fill="#FDFBF7"/>
+    </g>
+  </g>
+</svg>

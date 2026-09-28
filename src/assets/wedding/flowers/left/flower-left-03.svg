@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350" width="100%" height="100%">
+  <defs>
+    <radialGradient id="magnoliaIvoryLeft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDFBF7" />
+      <stop offset="70%" stop-color="#FAF5EF" />
+      <stop offset="100%" stop-color="#E9DDCB" />
+    </radialGradient>
+    <filter id="shadowLeft03" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="4" dy="8" stdDeviation="7" flood-color="#8B7668" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadowLeft03)">
+    <!-- Curving Olive branch from left edge -->
+    <path d="M-10 100 Q100 130 180 90 T270 40" stroke="#5E705B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M120 100 C170 60 210 70 200 40 C170 30 120 70 120 100 Z" fill="#A8B7A0" opacity="0.9"/>
+    <path d="M170 90 C220 50 260 60 250 30 C220 20 170 60 170 90 Z" fill="#5E705B" opacity="0.85"/>
+
+    <!-- Ivory Anemone / Magnolia Bloom -->
+    <g transform="translate(140, 180)">
+      <!-- 6 Soft Rounded Petals -->
+      <path d="M0 0 C-40 -110 40 -110 0 0 Z" fill="url(#magnoliaIvoryLeft)" transform="rotate(0)"/>
+      <path d="M0 0 C-40 -110 40 -110 0 0 Z" fill="url(#magnoliaIvoryLeft)" transform="rotate(60)"/>
+      <path d="M0 0 C-40 -110 40 -110 0 0 Z" fill="url(#magnoliaIvoryLeft)" transform="rotate(120)"/>
+      <path d="M0 0 C-40 -110 40 -110 0 0 Z" fill="url(#magnoliaIvoryLeft)" transform="rotate(180)"/>
+      <path d="M0 0 C-40 -110 40 -110 0 0 Z" fill="url(#magnoliaIvoryLeft)" transform="rotate(240)"/>
+      <path d="M0 0 C-40 -110 40 -110 0 0 Z" fill="url(#magnoliaIvoryLeft)" transform="rotate(300)"/>
+
+      <!-- Dark Botanical Center with Gold Anthers -->
+      <circle cx="0" cy="0" r="30" fill="#4A5848"/>
+      <!-- Ring of Gold Dots -->
+      <circle cx="0" cy="-22" r="3.5" fill="#C5A059"/>
+      <circle cx="15" cy="-15" r="3.5" fill="#C5A059"/>
+      <circle cx="22" cy="0" r="3.5" fill="#C5A059"/>
+      <circle cx="15" cy="15" r="3.5" fill="#C5A059"/>
+      <circle cx="0" cy="22" r="3.5" fill="#C5A059"/>
+      <circle cx="-15" cy="15" r="3.5" fill="#C5A059"/>
+      <circle cx="-22" cy="0" r="3.5" fill="#C5A059"/>
+      <circle cx="-15" cy="-15" r="3.5" fill="#C5A059"/>
+      <!-- Inner Kernel -->
+      <circle cx="0" cy="0" r="14" fill="#8B7668"/>
+    </g>
+  </g>
+</svg>

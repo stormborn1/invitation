@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 1200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="garlandBlush" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C98F9D" />
+      <stop offset="60%" stop-color="#E9B8C4" />
+      <stop offset="100%" stop-color="#F4DCE2" />
+    </radialGradient>
+    <filter id="garlandShadow" x="-20%" y="-10%" width="140%" height="120%">
+      <feDropShadow dx="5" dy="8" stdDeviation="8" flood-color="#8B7668" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <g filter="url(#garlandShadow)">
+    <!-- Main Thick Vine stem running down the left edge (x=-30) -->
+    <path d="M-30 -50 Q90 200 40 450 T70 850 T-20 1250" stroke="#5E705B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M-20 -30 Q120 220 60 470 T90 870 T-10 1230" stroke="#8B7668" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- LUSH LEAVES EXTENDING INWARD FROM LEFT EDGE -->
+    <!-- Cluster 1 (Top) -->
+    <path d="M10 50 C80 20 160 50 140 100 C110 140 30 110 10 50 Z" fill="#A8B7A0" opacity="0.95"/>
+    <path d="M30 100 C110 80 180 120 150 170 C110 200 40 160 30 100 Z" fill="#5E705B" opacity="0.9"/>
+    
+    <!-- Cluster 2 (Upper-Mid) -->
+    <path d="M40 300 C130 260 210 300 180 360 C140 400 60 360 40 300 Z" fill="#5E705B" opacity="0.9"/>
+    <path d="M50 360 C140 340 220 380 190 440 C150 480 70 430 50 360 Z" fill="#A8B7A0" opacity="0.95"/>
+    <path d="M30 420 C100 400 170 450 130 500 C80 530 20 480 30 420 Z" fill="#5E705B" opacity="0.85"/>
+
+    <!-- Cluster 3 (Lower-Mid) -->
+    <path d="M60 620 C150 580 230 630 190 690 C150 730 70 690 60 620 Z" fill="#A8B7A0" opacity="0.9"/>
+    <path d="M40 700 C130 670 200 720 160 780 C110 820 40 770 40 700 Z" fill="#5E705B" opacity="0.92"/>
+
+    <!-- Cluster 4 (Bottom) -->
+    <path d="M30 920 C120 880 190 930 160 990 C110 1030 30 990 30 920 Z" fill="#5E705B" opacity="0.9"/>
+    <path d="M20 980 C100 960 170 1020 130 1080 C80 1120 20 1060 20 980 Z" fill="#A8B7A0" opacity="0.95"/>
+
+    <!-- LARGE EMBEDDED FLOWERS ALONG THE GARLAND -->
+    <!-- Top Flower -->
+    <g transform="translate(60,180)">
+      <circle cx="0" cy="0" r="65" fill="#E9B8C4" />
+      <circle cx="-10" cy="-10" r="50" fill="#C98F9D" opacity="0.9" />
+      <circle cx="5" cy="5" r="35" fill="#F4DCE2" />
+      <circle cx="0" cy="0" r="14" fill="#C5A059" />
+    </g>
+
+    <!-- Mid Flower -->
+    <g transform="translate(90,520)">
+      <circle cx="0" cy="0" r="75" fill="url(#garlandBlush)" />
+      <circle cx="-12" cy="-12" r="58" fill="#F4DCE2" opacity="0.9" />
+      <circle cx="5" cy="5" r="40" fill="#C98F9D" opacity="0.85" />
+      <circle cx="0" cy="0" r="16" fill="#C5A059" />
+    </g>
+
+    <!-- Lower Flower -->
+    <g transform="translate(75,850)">
+      <circle cx="0" cy="0" r="70" fill="#F4DCE2" />
+      <circle cx="-10" cy="-10" r="52" fill="#E9B8C4" opacity="0.95" />
+      <circle cx="5" cy="5" r="36" fill="#C98F9D" opacity="0.85" />
+      <circle cx="0" cy="0" r="15" fill="#C5A059" />
+    </g>
+  </g>
+</svg>

@@ -1,135 +1,207 @@
 // Single source of truth for all client-editable wedding invitation data.
-// Components consume this data dynamically without hardcoding names, dates, or text.
+// Data is based on the physical wedding invitation card.
 
 export const weddingData = {
   couple: {
-    brideName: "Sultana Tabasum",
-    groomName: "Belal Ansari",
+    brideName: "Sultana Tabassum",
+    groomName: "Md. Belal Ansari",
     brideInitial: "S",
     groomInitial: "B",
     monogram: "S ♥ B",
-    subtitle: "A journey of two souls bound by faith, love, and grace."
+    subtitle: "A blessed beginning of two lives, joined together in faith and love."
   },
 
   hero: {
     bismillah: "بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
-    bismillahTranslation: "In the name of Allah, the Most Gracious, the Most Merciful",
-    greeting: "With the blessings of Allah Almighty",
-    invitationText: "Together with their families, they joyfully invite you to celebrate their union of togetherness.",
-    weddingDate: "16 December 2026",
-    venueSummary: "The Grand Palace, Royal Garden Estate",
-    scrollPrompt: "Scroll to explore our story"
+    bismillahTranslation:
+      "In the name of Allah, the Most Gracious, the Most Merciful",
+
+    greeting: "In the Name of Allah, the Most Beneficent & the Most Merciful",
+
+    invitationText:
+      "Mrs. & Mr. Md. Salamuddin Ansari request the pleasure of your company on the auspicious occasion of the Wedding Ceremony of their daughter.",
+
+    weddingDate: "28 October 2026",
+
+    venueSummary: "",
+
+    scrollPrompt: "Scroll to explore their story"
   },
 
   bride: {
     role: "THE BRIDE",
-    name: "Ayesha Khan",
-    fatherName: "Mr. Imran Khan",
-    motherName: "Mrs. Farida Khan",
-    profession: "Software Engineer",
-    personalLine: "A graceful soul stepping forward with hope, elegance, and infinite prayers into a beautiful new chapter.",
-    quote: "And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them."
+    name: "Sultana Tabassum",
+
+    fatherName: "Md. Salamuddin Ansari",
+
+    motherName: "",
+
+    profession: "Gov. Teacher",
+
+    personalLine:
+      "With the blessings of Allah and the love of her family, she begins a beautiful new chapter of life.",
+
+    quote: ""
   },
 
   groom: {
     role: "THE GROOM",
-    name: "Muhammad Ahmed",
-    fatherName: "Mr. Ahmed Rahman",
-    motherName: "Mrs. Yasmin Rahman",
-    profession: "Entrepreneur",
-    personalLine: "A steadfast heart embracing a sacred covenant with kindness, devotion, and joy.",
-    quote: "Love is not about finding the perfect person, but seeing an imperfect person perfectly through Allah's grace."
+    name: "Md. Belal Ansari",
+
+    fatherName: "Dr. Md. Islam Ansari",
+
+    motherName: "",
+
+    profession: "Army Officer",
+
+    personalLine:
+      "With faith, family blessings, and the grace of Allah, he begins a sacred new chapter of life.",
+
+    quote: ""
   },
 
   union: {
-    title: "TWO STORIES",
-    subtitle: "ONE SACRED BEGINNING",
-    description: "Two paths guided by faith, woven together by divine decree, now embarking on an eternal journey of love and togetherness."
+    title: "TWO LIVES",
+    subtitle: "ONE BLESSED BEGINNING",
+
+    description:
+      "Two families come together in the blessed occasion of marriage, with prayers, love, and the blessings of Allah."
   },
 
   dua: {
     title: "Sacred Du'a for the Union",
-    arabic: "بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
-    transliteration: "Barakallahu laka wa baraka 'alayka wa jama'a baynakuma fii khayr",
-    translation: "May Allah bless you, and shower His blessings upon you, and join you together in goodness and harmony.",
+
+    arabic:
+      "بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
+
+    transliteration:
+      "Barakallahu laka wa baraka 'alayka wa jama'a baynakuma fii khayr",
+
+    translation:
+      "May Allah bless you, shower His blessings upon you, and join you together in goodness.",
+
     reference: "Sunan Abi Dawud 2130",
+
     ending: "آمين يا رب العالمين"
   },
 
   events: [
     {
-      id: "mehndi",
-      title: "Mehndi Ceremony",
-      date: "12 December 2026",
-      time: "07:00 PM onwards",
-      venue: "Rose Garden Pavilion",
-      address: "Palace Road, Block 4, Royal Enclave",
-      colorTag: "Rose & Gold",
-      description: "An evening filled with vibrant colors, traditional songs, henna artistry, and joyful laughter.",
-      gmapUrl: "https://maps.google.com/?q=Rose+Garden+Pavilion"
-    },
-    {
-      id: "chowk",
-      title: "Chowk & Sangeet",
-      date: "14 December 2026",
-      time: "06:00 PM onwards",
-      venue: "Family Residence",
-      address: "Villa 14, Gardenia Crest, Heritage Hills",
-      colorTag: "Emerald & Cream",
-      description: "An intimate gathering of traditional rituals, fragrant flowers, and family blessings.",
-      gmapUrl: "https://maps.google.com/?q=Family+Residence"
-    },
-    {
       id: "barat",
-      title: "Barat Procession",
-      date: "16 December 2026",
-      time: "08:00 PM",
-      venue: "Grand Palace Ballroom",
-      address: "7th Avenue, Imperial Boulevard, Sector 9",
+      title: "Arrival of Barat",
+      date: "28 October 2026",
+      time: "07:00 PM",
+      venue: "",
+      address: "",
       colorTag: "Royal Gold & Ivory",
-      description: "The grand arrival of the groom and family welcomed with royal warmth and celebrations.",
-      gmapUrl: "https://maps.google.com/?q=Grand+Palace+Ballroom"
+      description:
+        "The arrival of the Barat and the beginning of the wedding celebrations.",
+      gmapUrl: ""
     },
+
     {
       id: "nikah",
-      title: "Sacred Nikah",
-      date: "16 December 2026",
-      time: "09:00 PM",
-      venue: "Grand Palace Central Hall",
-      address: "7th Avenue, Imperial Boulevard, Sector 9",
+      title: "Nikah",
+      date: "28 October 2026",
+      time: "08:00 PM",
+      venue: "",
+      address: "",
       colorTag: "Pure White & Gold",
-      description: "The holy solemnization of marriage in the presence of beloved family and elders.",
-      gmapUrl: "https://maps.google.com/?q=Grand+Palace+Central+Hall"
+      description:
+        "The sacred solemnization of marriage in the presence of family and loved ones.",
+      gmapUrl: ""
     },
+
     {
-      id: "rukhsati",
-      title: "Rukhsati",
-      date: "17 December 2026",
-      time: "11:00 AM",
-      venue: "Grand Palace Courtyard",
-      address: "7th Avenue, Imperial Boulevard, Sector 9",
+      id: "dinner",
+      title: "Dinner",
+      date: "28 October 2026",
+      time: "After Nikah",
+      venue: "",
+      address: "",
+      colorTag: "Soft Blush & Gold",
+      description:
+        "Dinner will be served after the Nikah ceremony.",
+      gmapUrl: ""
+    },
+
+    {
+      id: "return-barat",
+      title: "Return of Barat",
+      date: "29 October 2026",
+      time: "07:00 AM",
+      venue: "",
+      address: "",
       colorTag: "Soft Blush & Sage",
-      description: "The emotional sendoff of the bride with tears of joy, heartfelt du'as, and unconditional love.",
-      gmapUrl: "https://maps.google.com/?q=Grand+Palace+Courtyard"
+      description:
+        "Return of the Barat on the following morning.",
+      gmapUrl: ""
     }
   ],
 
   countdown: {
-    targetDate: "2026-12-16T21:00:00",
-    heading: "Counting Down to the Sacred Day",
-    subtext: "Insha'Allah, we look forward to celebrating this blessed occasion with you."
+    targetDate: "2026-10-28T20:00:00",
+
+    heading: "Counting Down to the Blessed Day",
+
+    subtext:
+      "Insha'Allah, we look forward to celebrating this blessed occasion with you."
   },
 
   greetings: {
     enabled: true,
+
     heading: "Send Your Blessings & Wishes",
-    subtext: "Your du'as and warm wishes mean the world to us. Send your personal blessing directly to the couple.",
-    whatsappNumber: "919999999999"
+
+    subtext:
+      "Your du'as and warm wishes mean the world to the couple. Send your blessings and wishes for their new journey together.",
+
+    whatsappNumber: ""
   },
 
   footer: {
-    closingText: "With love, prayers and endless blessings from the Khan & Rahman families.",
-    islamicSignoff: "جَزاكُمُ اللهُ خَيْراً",
-    copyright: "© 2026 Ayesha & Muhammad Wedding. Crafted with devotion."
+    closingText:
+      "With love, prayers and blessings from the Ansari family.",
+
+    islamicSignoff: "جَزَاكُمُ اللهُ خَيْرًا",
+
+    copyright: "© 2026 Sultana Tabassum & Md. Belal Ansari. Crafted with devotion."
+  },
+
+  family: {
+    brideSide: {
+      father: "Md. Salamuddin Ansari",
+      grandfather: "Late Qasim Ansari",
+      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)"
+    },
+
+    groomSide: {
+      father: "Dr. Md. Islam Ansari",
+      address: "Vill. Mukhranw, P.S. Kuchhila, Dist. Kaimur (Bhabua), Bihar"
+    },
+
+    weddingFrom: {
+      name: "Md. Salamuddin Ansari",
+      relation: "S/o Late Qasim Ansari",
+      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      mobile: "9939908958"
+    },
+
+    rsvp: [
+      "Md. Hussain Ansari",
+      "Qari Nazeer Ahmad",
+      "Md. Sagir Ansari",
+      "Md. Abdullah",
+      "Md. Ashfaque",
+      "Md. Saddam",
+      "Mufti Asad Ahmad Hussain",
+      "Md. Arshad",
+      "Athar",
+      "Md. Rafi Salman",
+      "Shahrukh Sultan",
+      "Salim Jawed",
+      "Abuzar",
+      "All Relatives & Friends"
+    ]
   }
 };

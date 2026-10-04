@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Music, VolumeX, Heart } from 'lucide-react';
-import { weddingData } from '../../data/weddingData';
+import React, { useState, useEffect } from "react";
+import { Menu, X, Music, VolumeX } from "lucide-react";
+import { weddingData } from "../../data/weddingData";
+import weddingSong from "../../assets/wedding/song/wedding-song.mp3";
 
 export default function Navbar({ visible = true }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio] = useState(() => {
-    // Optional gentle ambient background music instrument
-    const a = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
+    const a = new Audio(weddingSong);
     a.loop = true;
     a.volume = 0.3;
     return a;
@@ -22,8 +22,8 @@ export default function Navbar({ visible = true }) {
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMusic = () => {
@@ -31,19 +31,22 @@ export default function Navbar({ visible = true }) {
       audio.pause();
       setIsPlaying(false);
     } else {
-      audio.play().then(() => setIsPlaying(true)).catch(() => {});
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
     }
   };
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Bride', href: '#bride' },
-    { name: 'Groom', href: '#groom' },
-    { name: 'Our Story', href: '#union' },
-    { name: 'Du\'a', href: '#dua' },
-    { name: 'Events', href: '#events' },
-    { name: 'Countdown', href: '#countdown' },
-    { name: 'Blessings', href: '#greetings' },
+    { name: "Home", href: "#hero" },
+    { name: "Bride", href: "#bride" },
+    { name: "Groom", href: "#groom" },
+    { name: "Our Story", href: "#union" },
+    { name: "Du'a", href: "#dua" },
+    { name: "Events", href: "#events" },
+    { name: "Countdown", href: "#countdown" },
+    { name: "Blessings", href: "#greetings" },
   ];
 
   const handleNavClick = (e, href) => {
@@ -54,7 +57,7 @@ export default function Navbar({ visible = true }) {
     } else {
       const target = document.querySelector(href);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -67,11 +70,13 @@ export default function Navbar({ visible = true }) {
         {/* Monogram Brand Logo */}
         <a
           href="#hero"
-          onClick={(e) => handleNavClick(e, '#hero')}
+          onClick={(e) => handleNavClick(e, "#hero")}
           className="glass-pill px-4 py-2 rounded-full flex items-center gap-2 border border-[#E9B8C4]/40 hover:border-[#5E705B]/50 transition-all"
         >
           <span className="font-editorial text-lg md:text-xl font-bold tracking-wider text-[#4B403B]">
-            {weddingData.couple.brideInitial} <span className="text-[#C98F9D] text-sm">♥</span> {weddingData.couple.groomInitial}
+            {weddingData.couple.brideInitial}{" "}
+            <span className="text-[#C98F9D] text-sm">♥</span>{" "}
+            {weddingData.couple.groomInitial}
           </span>
           <span className="hidden sm:inline-block text-[11px] font-sans tracking-widest text-[#8B7668] uppercase">
             Wedding
@@ -97,10 +102,16 @@ export default function Navbar({ visible = true }) {
           {/* Audio Music Toggle Button */}
           <button
             onClick={toggleMusic}
-            title={isPlaying ? "Mute Background Music" : "Play Gentle Ambient Music"}
+            title={
+              isPlaying ? "Mute Background Music" : "Play Gentle Ambient Music"
+            }
             className="glass-pill p-2.5 rounded-full text-[#8B7668] hover:text-[#5E705B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C98F9D]"
           >
-            {isPlaying ? <Music className="w-4 h-4 text-[#C98F9D] animate-bounce" /> : <VolumeX className="w-4 h-4" />}
+            {isPlaying ? (
+              <Music className="w-4 h-4 text-[#C98F9D] animate-bounce" />
+            ) : (
+              <VolumeX className="w-4 h-4" />
+            )}
           </button>
 
           {/* Mobile Menu Toggle Button */}
@@ -109,7 +120,11 @@ export default function Navbar({ visible = true }) {
             className="md:hidden glass-pill p-2.5 rounded-full text-[#4B403B] hover:text-[#5E705B] transition-colors focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>

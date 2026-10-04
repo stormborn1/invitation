@@ -16,7 +16,7 @@ export default function Seal({ onClick, sealRef }) {
       <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-[#E9B8C4]/40 via-[#C5A059]/30 to-[#E9B8C4]/40 blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
 
       {/* Wax Seal Image Container */}
-      <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center shadow-2xl wax-seal-shadow overflow-hidden">
+      <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center overflow-hidden">
         {waxSealUrl ? (
           <img src={waxSealUrl} alt="Wax Seal" className="absolute inset-0 w-full h-full object-cover" />
         ) : (
@@ -25,7 +25,7 @@ export default function Seal({ onClick, sealRef }) {
 
         {/* Central Monogram Text */}
         {/* <div className="relative z-10 flex flex-col items-center justify-center text-center p-2">
-          <span className="font-editorial text-2xl md:text-3xl font-bold tracking-widest text-[#FBF7F1] drop-shadow-md select-none">
+          <span className="font-editorial text-2xl md:text-3xl font-bold tracking-widest text-[#FBF7F1] select-none">
             {weddingData.couple.brideInitial} <span className="text-[#F4DCE2] text-xl">♥</span> {weddingData.couple.groomInitial}
           </span>
           <span className="text-[10px] md:text-xs tracking-widest uppercase font-sans font-medium text-[#FBF7F1]/90 mt-1">

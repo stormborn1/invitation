@@ -90,7 +90,7 @@ export default function ButterflyLayer() {
             <img
               src={url}
               alt=""
-              className="wing-flutter w-full h-full object-contain filter drop-shadow-md"
+              className="wing-flutter w-full h-full object-contain"
             />
           </div>
         );

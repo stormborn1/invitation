@@ -49,9 +49,13 @@ export default function Navbar({ visible = true }) {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (window.__weddingScrollToStory) {
+      window.__weddingScrollToStory(href);
+    } else {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -75,7 +79,7 @@ export default function Navbar({ visible = true }) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 glass-pill px-5 py-2 rounded-full shadow-sm">
+        <nav className="hidden md:flex items-center gap-1 glass-pill px-5 py-2 rounded-full">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -112,7 +116,7 @@ export default function Navbar({ visible = true }) {
 
       {/* Mobile Drawer Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-4 top-16 z-50 glass-card rounded-2xl p-6 shadow-2xl border border-[#E9B8C4]/40 animate-fadeIn">
+        <div className="md:hidden fixed inset-x-4 top-16 z-50 glass-card rounded-2xl p-6 border border-[#E9B8C4]/40 animate-fadeIn">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a

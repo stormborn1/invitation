@@ -6,11 +6,8 @@
       <stop offset="85%" stop-color="#C98F9D" />
       <stop offset="100%" stop-color="#8B7668" />
     </radialGradient>
-    <filter id="bfGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#8B7668" flood-opacity="0.3" />
-    </filter>
   </defs>
-  <g filter="url(#bfGlow)">
+  <g>
     <path d="M50 45 C30 10 0 15 5 45 C10 65 35 60 50 50 Z" fill="url(#wingGradGold)" class="wing-flutter"/>
     <path d="M50 52 C35 55 15 70 20 85 C25 95 45 75 50 58 Z" fill="#C98F9D" opacity="0.95" class="wing-flutter"/>
     <path d="M50 45 C70 10 100 15 95 45 C90 65 65 60 50 50 Z" fill="url(#wingGradGold)"/>

@@ -14,13 +14,13 @@ export function useLenis(enabled = true) {
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.8,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 2.0,
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -32,7 +32,10 @@ export function useLenis(enabled = true) {
     gsap.ticker.add(updateGSAP);
     gsap.ticker.lagSmoothing(0);
 
+    window.__lenis = lenis;
+
     return () => {
+      delete window.__lenis;
       gsap.ticker.remove(updateGSAP);
       lenis.destroy();
     };

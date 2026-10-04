@@ -78,7 +78,7 @@ export default function Loader({ onComplete }) {
         {/* Bismillah Calligraphy */}
         <div ref={bismillahRef} className="opacity-0 translate-y-4 w-full flex justify-center">
           {bismillahUrl ? (
-            <img src={bismillahUrl} alt="Bismillah" className="h-16 md:h-20 object-contain drop-shadow-sm" />
+            <img src={bismillahUrl} alt="Bismillah" className="h-16 md:h-20 object-contain" />
           ) : (
             <h2 className="font-arabic text-2xl md:text-3xl text-[#8B7668]">
               {weddingData.hero.bismillah}

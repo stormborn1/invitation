@@ -72,7 +72,8 @@ export default function BotanicalLayer() {
           transformOrigin,
         };
 
-        const isShadow = item.assetCategory && item.assetCategory.startsWith('shadows');
+        // Ignore any shadow category item
+        if (item.assetCategory && item.assetCategory.startsWith('shadows')) return null;
 
         return (
           <div
@@ -84,11 +85,7 @@ export default function BotanicalLayer() {
             <img
               src={url}
               alt=""
-              className={`w-full h-full object-contain ${
-                isShadow
-                  ? 'filter blur-[1px]'
-                  : 'filter drop-shadow-[0_12px_24px_rgba(139,118,104,0.28)]'
-              }`}
+              className="w-full h-full object-contain"
             />
           </div>
         );

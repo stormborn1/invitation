@@ -127,7 +127,7 @@ export default function InvitationGate({ onGateOpen }) {
       {/* LEFT GATE PANEL */}
       <div
         ref={leftPanelRef}
-        className="absolute top-0 left-0 w-1/2 h-full bg-[#FBF7F1] bg-gate-texture border-r border-[#C98F9D]/30 shadow-2xl flex flex-col justify-between p-6 md:p-12 overflow-hidden z-20"
+        className="absolute top-0 left-0 w-1/2 h-full bg-[#FBF7F1] bg-gate-texture border-r border-[#C98F9D]/30 flex flex-col justify-between p-6 md:p-12 overflow-hidden z-20"
       >
         {/* Top Left Embossed Corner Ornament */}
         <div className="w-20 h-20 md:w-32 md:h-32 opacity-70">
@@ -166,7 +166,7 @@ export default function InvitationGate({ onGateOpen }) {
       {/* RIGHT GATE PANEL */}
       <div
         ref={rightPanelRef}
-        className="absolute top-0 right-0 w-1/2 h-full bg-[#FBF7F1] bg-gate-texture border-l border-[#C98F9D]/30 shadow-2xl flex flex-col justify-between items-end p-6 md:p-12 overflow-hidden z-20"
+        className="absolute top-0 right-0 w-1/2 h-full bg-[#FBF7F1] bg-gate-texture border-l border-[#C98F9D]/30 flex flex-col justify-between items-end p-6 md:p-12 overflow-hidden z-20"
       >
         {/* Top Right Corner Ornament */}
         <div className="w-20 h-20 md:w-32 md:h-32 opacity-70 transform rotate-90">

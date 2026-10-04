@@ -1,125 +1,111 @@
 // Comprehensive Asset Registry
 // Maps all existing visual assets in src/assets/ to structured categories and provides getAssetUrl lookup helper.
 
-import flowerLeft01Svg from '../assets/wedding/flowers/left/flower-left-01.svg';
-import flowerLeft02Png from "../assets/wedding/flowers/left/flower-left-02.png";
-import flowerLeft02Svg from '../assets/wedding/flowers/left/flower-left-02.svg';
-import flowerLeft03Png from "../assets/wedding/flowers/left/flower-left-03.png";
-import flowerLeft03Svg from '../assets/wedding/flowers/left/flower-left-03.svg';
-import flowerLeft04Png from "../assets/wedding/flowers/left/flower-left-04.png";
-import flowerLeft04Svg from '../assets/wedding/flowers/left/flower-left-04.svg';
+import flowerLeft01Png from '../assets/wedding/flowers/left/flower-left-01.png';
+import flowerLeft02Png from '../assets/wedding/flowers/left/flower-left-02.png';
+import flowerLeft03Png from '../assets/wedding/flowers/left/flower-left-03.png';
+import flowerLeft04Png from '../assets/wedding/flowers/left/flower-left-04.png';
 
-import flowerRight01Jpg from '../assets/wedding/flowers/right/flower-right-01.jpg';
-import flowerRight01Png from "../assets/wedding/flowers/right/flower-right-01.png";
-import flowerRight01Svg from '../assets/wedding/flowers/right/flower-right-01.svg';
-import flowerRight02Png from "../assets/wedding/flowers/right/flower-right-02.png";
-import flowerRight02Svg from '../assets/wedding/flowers/right/flower-right-02.svg';
-import flowerRight03Svg from "../assets/wedding/flowers/right/flower-right-03.png";
-import flowerRight04Svg from '../assets/wedding/flowers/right/flower-right-04.svg';
+import flowerRight01Png from '../assets/wedding/flowers/right/flower-right-01.png';
+import flowerRight02Png from '../assets/wedding/flowers/right/flower-right-02.png';
+import flowerRight03Png from '../assets/wedding/flowers/right/flower-right-03.png';
+import flowerRight04Png from '../assets/wedding/flowers/right/flower-right-04.png';
 
-import leaf01Svg from "../assets/wedding/leaves/leaf-01.png";
-import leaf02Svg from "../assets/wedding/leaves/leaf-02.png";
-import leaf03Svg from "../assets/wedding/leaves/leaf-03.svg";
-import leaf04Svg from "../assets/wedding/leaves/leaf-04.svg";
-import leafLeft01Svg from "../assets/wedding/leaves/left/leaf-left-01.svg";
-import leafLeft02Svg from "../assets/wedding/leaves/left/leaf-left-02.svg";
-import leafLeft03Svg from "../assets/wedding/leaves/left/leaf-left-03.svg";
-import leafRight01Png from "../assets/wedding/leaves/right/leaf-right-01.png";
-import leafRight01Svg from "../assets/wedding/leaves/right/leaf-right-01.svg";
-import leafRight02Svg from "../assets/wedding/leaves/right/leaf-right-02.svg";
-import leafRight03Svg from "../assets/wedding/leaves/right/leaf-right-03.svg";
+import leaf01Png from '../assets/wedding/leaves/leaf-01.png';
+import leaf02Png from '../assets/wedding/leaves/leaf-02.png';
+import leaf03Png from '../assets/wedding/leaves/leaf-03.png';
+import leaf04Png from '../assets/wedding/leaves/leaf-04.png';
+import leafLeft01Png from '../assets/wedding/leaves/left/leaf-left-01.png';
+import leafLeft02Png from '../assets/wedding/leaves/left/leaf-left-02.png';
+import leafLeft03Png from '../assets/wedding/leaves/left/leaf-left-03.png';
+import leafRight01Png from '../assets/wedding/leaves/right/leaf-right-01.png';
+import leafRight02Png from '../assets/wedding/leaves/right/leaf-right-02.png';
+import leafRight03Png from '../assets/wedding/leaves/right/leaf-right-03.png';
 
-import branchLeftSvg from "../assets/wedding/branches/branch-left.svg";
-import branchRightSvg from "../assets/wedding/branches/branch-right.svg";
-import branchSideLeftGarlandSvg from "../assets/wedding/branches/branch-side-left-garland.svg";
-import branchSideRightGarlandSvg from "../assets/wedding/branches/branch-side-right-garland.svg";
-import branchTopLeftSvg from "../assets/wedding/branches/branch-top-left.svg";
-import branchTopRightSvg from "../assets/wedding/branches/branch-top-right.svg";
-import branchLeft01Svg from "../assets/wedding/branches/left/branch-left-01.svg";
-import branchLeft02Svg from "../assets/wedding/branches/left/branch-left-02.png";
-import branchRight01Svg from "../assets/wedding/branches/right/branch-right-01.svg";
-import branchRight02Svg from "../assets/wedding/branches/right/branch-right-02.svg";
+import branchLeftPng from '../assets/wedding/branches/branch-left.png';
+import branchRightPng from '../assets/wedding/branches/branch-right.png';
+import branchSideLeftGarlandPng from '../assets/wedding/branches/branch-side-left-garland.png';
+import branchSideRightGarlandPng from '../assets/wedding/branches/branch-side-right-garland.png';
+import branchTopLeftPng from '../assets/wedding/branches/branch-top-left.png';
+import branchTopRightPng from '../assets/wedding/branches/branch-top-right.png';
+import branchLeft01Png from '../assets/wedding/branches/left/branch-left-01.png';
+import branchLeft02Png from '../assets/wedding/branches/left/branch-left-02.png';
+import branchRight01Png from '../assets/wedding/branches/right/branch-right-01.png';
+import branchRight02Png from '../assets/wedding/branches/right/branch-right-02.png';
 
-import butterfly01Svg from "../assets/wedding/butterflies/butterfly-01.svg";
-import butterfly02Svg from "../assets/wedding/butterflies/butterfly-02.svg";
-import butterfly03Svg from "../assets/wedding/butterflies/butterfly-03.svg";
-import butterfly04Svg from "../assets/wedding/butterflies/butterfly-04.svg";
+import butterfly01Svg from '../assets/wedding/butterflies/butterfly-01.svg';
+import butterfly02Svg from '../assets/wedding/butterflies/butterfly-02.svg';
+import butterfly03Svg from '../assets/wedding/butterflies/butterfly-03.svg';
+import butterfly04Svg from '../assets/wedding/butterflies/butterfly-04.svg';
 
-import bird01Svg from "../assets/wedding/birds/bird-01.svg";
-import bird02Svg from "../assets/wedding/birds/bird-02.svg";
+import bird01Svg from '../assets/wedding/birds/bird-01.svg';
+import bird02Svg from '../assets/wedding/birds/bird-02.svg';
 
-import bismillahSvg from "../assets/wedding/islamic/bismillah.svg";
+import bismillahSvg from '../assets/wedding/islamic/bismillah.svg';
 
-import cornerOrnamentSvg from "../assets/wedding/ornaments/corner-ornament.svg";
-import dividerOrnamentSvg from "../assets/wedding/ornaments/divider-ornament.svg";
+import cornerOrnamentSvg from '../assets/wedding/ornaments/corner-ornament.svg';
+import dividerOrnamentSvg from '../assets/wedding/ornaments/divider-ornament.svg';
 
-import waxSealPng from "../assets/wedding/seal/wax-seal.png";
+import waxSealPng from '../assets/wedding/seal/wax-seal.png';
 
-import floralShadowLeftSvg from "../assets/wedding/shadows/floral-shadow-left.svg";
-import floralShadowRightSvg from "../assets/wedding/shadows/floral-shadow-right.svg";
-import shadowLeft01Svg from "../assets/wedding/shadows/left/shadow-left-01.svg";
-import shadowLeft02Svg from "../assets/wedding/shadows/left/shadow-left-02.svg";
-import shadowRight01Svg from "../assets/wedding/shadows/right/shadow-right-01.svg";
-import shadowRight02Svg from "../assets/wedding/shadows/right/shadow-right-02.svg";
-
-import gateFlowerLeftPng from "../assets/wedding/gate/flowers/left/flower-gate-left.png";
-import gateFlowerRightPng from "../assets/wedding/gate/flowers/right/flower-gate-right.png";
+import floralShadowLeftSvg from '../assets/wedding/shadows/floral-shadow-left.svg';
+import floralShadowRightSvg from '../assets/wedding/shadows/floral-shadow-right.svg';
+import shadowLeft01Svg from '../assets/wedding/shadows/left/shadow-left-01.svg';
+import shadowLeft02Svg from '../assets/wedding/shadows/left/shadow-left-02.svg';
+import shadowRight01Svg from '../assets/wedding/shadows/right/shadow-right-01.svg';
+import shadowRight02Svg from '../assets/wedding/shadows/right/shadow-right-02.svg';
+// 
+import gateFlowerLeftPng from '../assets/wedding/gate/flowers/left/flower-gate-left.png';
+import gateFlowerRightPng from '../assets/wedding/gate/flowers/right/flower-gate-right.png';
 
 export const assets = {
   flowers: {
     left: {
-      flowerLeft01: flowerLeft01Svg,
+      flowerLeft01: flowerLeft01Png,
       flowerLeft02: flowerLeft02Png,
       flowerLeft03: flowerLeft03Png,
       flowerLeft04: flowerLeft04Png,
-      flowerLeft02Svg,
-      flowerLeft03Svg,
-      flowerLeft04Svg,
     },
     right: {
       flowerRight01: flowerRight01Png,
       flowerRight02: flowerRight02Png,
-      flowerRight03: flowerRight03Svg,
-      flowerRight04: flowerRight04Svg,
-      flowerRight01Jpg,
-      flowerRight01Svg,
-      flowerRight02Svg,
+      flowerRight03: flowerRight03Png,
+      flowerRight04: flowerRight04Png,
     },
-    flower01: flowerLeft01Svg,
+    flower01: flowerLeft01Png,
     flower02: flowerRight01Png,
   },
   leaves: {
     left: {
-      leafLeft01: leafLeft01Svg,
-      leafLeft02: leafLeft02Svg,
-      leafLeft03: leafLeft03Svg,
+      leafLeft01: leafLeft01Png,
+      leafLeft02: leafLeft02Png,
+      leafLeft03: leafLeft03Png,
     },
     right: {
       leafRight01: leafRight01Png,
-      leafRight02: leafRight02Svg,
-      leafRight03: leafRight03Svg,
-      leafRight01Svg,
+      leafRight02: leafRight02Png,
+      leafRight03: leafRight03Png,
     },
-    leaf01: leaf01Svg,
-    leaf02: leaf02Svg,
-    leaf03: leaf03Svg,
-    leaf04: leaf04Svg,
+    leaf01: leaf01Png,
+    leaf02: leaf02Png,
+    leaf03: leaf03Png,
+    leaf04: leaf04Png,
   },
   branches: {
     left: {
-      branchLeft01: branchLeft01Svg,
-      branchLeft02: branchLeft02Svg,
+      branchLeft01: branchLeft01Png,
+      branchLeft02: branchLeft02Png,
     },
     right: {
-      branchRight01: branchRight01Svg,
-      branchRight02: branchRight02Svg,
+      branchRight01: branchRight01Png,
+      branchRight02: branchRight02Png,
     },
-    branchLeft: branchLeftSvg,
-    branchRight: branchRightSvg,
-    sideLeftGarland: branchSideLeftGarlandSvg,
-    sideRightGarland: branchSideRightGarlandSvg,
-    topLeft: branchTopLeftSvg,
-    topRight: branchTopRightSvg,
+    branchLeft: branchLeftPng,
+    branchRight: branchRightPng,
+    sideLeftGarland: branchSideLeftGarlandPng,
+    sideRightGarland: branchSideRightGarlandPng,
+    topLeft: branchTopLeftPng,
+    topRight: branchTopRightPng,
   },
   butterflies: {
     butterfly01: butterfly01Svg,

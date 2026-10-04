@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="100%" height="100%">
-  <!-- Olive & Olive leaf spray originating from RIGHT edge (x=200) reaching left -->
-  <path d="M210 150 Q130 130 80 160 T10 140" stroke="#4A5848" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M180 140 C130 100 80 125 70 120 C110 110 160 130 180 140 Z" fill="#5E705B" opacity="0.95"/>
-  <path d="M130 155 C80 120 30 145 20 140 C60 130 110 150 130 155 Z" fill="#A8B7A0" opacity="0.9"/>
-  <!-- Olives -->
-  <ellipse cx="140" cy="165" rx="7" ry="9" fill="#4A5848"/>
-  <ellipse cx="90" cy="170" rx="6" ry="8" fill="#C5A059"/>
-</svg>

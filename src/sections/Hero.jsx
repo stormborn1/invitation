@@ -154,7 +154,7 @@ export default function Hero({ active = false }) {
 
         {/* Wedding Date Display Card */}
         <div ref={dateRef} className="opacity-0 pt-1">
-          <div className="glass-pill px-6 py-2.5 rounded-full border border-[#E9B8C4]/60 inline-flex flex-col items-center shadow-md">
+          <div className="glass-pill px-6 py-2.5   inline-flex flex-col items-center shadow-md">
             <span className="text-[10px] sm:text-xs font-sans tracking-[0.25em] uppercase font-bold text-[#C98F9D]">
               Save The Date
             </span>
@@ -166,7 +166,7 @@ export default function Hero({ active = false }) {
       </div>
 
       {/* Scroll Down Prompt Indicator */}
-      <div
+      {/* <div
         ref={scrollIndicatorRef}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1.5 opacity-0 z-20"
       >
@@ -174,7 +174,7 @@ export default function Hero({ active = false }) {
           {weddingData.hero.scrollPrompt}
         </span>
         <ChevronDown className="w-4 h-4 text-[#C98F9D] animate-bounce" />
-      </div>
+      </div> */}
     </section>
   );
 }

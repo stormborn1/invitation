@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import gsap from 'gsap';
 import { botanicalSceneConfig } from '../../config/botanicalConfig';
 import { getAssetUrl } from '../../config/assetRegistry';
@@ -6,53 +6,24 @@ import { getAssetUrl } from '../../config/assetRegistry';
 export default function BotanicalLayer() {
   const containerRef = useRef(null);
 
+  // Retrieve all elements from the configuration
+  const elements = useMemo(() => {
+    return botanicalSceneConfig.allElements || [];
+  }, []);
+
   useEffect(() => {
     if (!botanicalSceneConfig.enabled) return;
+
     const ctx = gsap.context(() => {
-      // 1. Sway Background Elements
-      botanicalSceneConfig.backgroundElements.forEach((elConfig) => {
+      elements.forEach((elConfig) => {
         const el = document.getElementById(elConfig.id);
         if (el && elConfig.sway) {
           gsap.to(el, {
             rotation: `+=${elConfig.sway.rotDeg || 0}`,
             x: `+=${elConfig.sway.xPx || 0}`,
             y: `+=${elConfig.sway.yPx || 0}`,
-            duration: elConfig.sway.duration,
-            delay: elConfig.sway.delay,
-            ease: 'sine.inOut',
-            repeat: -1,
-            yoyo: true,
-          });
-        }
-      });
-
-      // 2. Sway Midground Elements
-      botanicalSceneConfig.midgroundElements.forEach((elConfig) => {
-        const el = document.getElementById(elConfig.id);
-        if (el && elConfig.sway) {
-          gsap.to(el, {
-            rotation: `+=${elConfig.sway.rotDeg || 0}`,
-            x: `+=${elConfig.sway.xPx || 0}`,
-            y: `+=${elConfig.sway.yPx || 0}`,
-            duration: elConfig.sway.duration,
-            delay: elConfig.sway.delay,
-            ease: 'sine.inOut',
-            repeat: -1,
-            yoyo: true,
-          });
-        }
-      });
-
-      // 3. Sway Foreground Large Hero Flowers & Leaves
-      botanicalSceneConfig.foregroundFlowers.forEach((fl) => {
-        const el = document.getElementById(fl.id);
-        if (el && fl.sway) {
-          gsap.to(el, {
-            rotation: `+=${fl.sway.rotDeg || 0}`,
-            x: `+=${fl.sway.xPx || 0}`,
-            y: `+=${fl.sway.yPx || 0}`,
-            duration: fl.sway.duration,
-            delay: fl.sway.delay,
+            duration: elConfig.sway.duration || 6,
+            delay: elConfig.sway.delay || 0,
             ease: 'sine.inOut',
             repeat: -1,
             yoyo: true,
@@ -62,85 +33,66 @@ export default function BotanicalLayer() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [elements]);
 
   return (
-    <div ref={containerRef} className="fixed inset-0 pointer-events-none select-none overflow-hidden z-40">
-      {/* DEPTH 1: BACKGROUND GARLANDS & SHADOWS (Z-10) */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {botanicalSceneConfig.backgroundElements.map((br) => {
-          const url = getAssetUrl(br.assetCategory, br.assetKey);
-          if (!url) return null;
-          const style = {
-            position: 'absolute',
-            top: br.top,
-            bottom: br.bottom,
-            left: br.left,
-            right: br.right,
-            width: br.width,
-            opacity: br.opacity,
-            transformOrigin: br.side === 'right' ? 'top right' : 'top left',
-          };
-          return <img key={br.id} id={br.id} src={url} alt="" style={style} className="object-contain filter blur-[0.4px]" />;
-        })}
-      </div>
+    <div
+      ref={containerRef}
+      className="fixed inset-0 pointer-events-none select-none overflow-hidden z-40"
+      aria-hidden="true"
+    >
+      {elements.map((item) => {
+        const url = getAssetUrl(item.assetCategory, item.assetKey);
+        if (!url) return null;
 
-      {/* DEPTH 2: MIDGROUND LEAVES, FERNS, BLOOMS & BIRDS (Z-30) */}
-      <div className="absolute inset-0 z-30 pointer-events-none">
-        {botanicalSceneConfig.midgroundElements.map((lf) => {
-          const url = getAssetUrl(lf.assetCategory, lf.assetKey);
-          if (!url) return null;
-          const style = {
-            position: 'absolute',
-            top: lf.top,
-            bottom: lf.bottom,
-            left: lf.left,
-            right: lf.right,
-            width: lf.width || lf.size,
-            height: lf.height || 'auto',
-            transform: `rotate(${lf.rotation || 0}deg)`,
-            transformOrigin: lf.side === 'right' ? 'center right' : 'center left',
-            opacity: lf.opacity,
-          };
-          return <img key={lf.id} id={lf.id} src={url} alt="" style={style} className="object-contain filter drop-shadow-md" />;
-        })}
-      </div>
+        // Determine natural pivot origin based on corner if not explicitly specified
+        const transformOrigin =
+          item.transformOrigin ||
+          (item.corner === 'topLeft'
+            ? 'top left'
+            : item.corner === 'topRight'
+            ? 'top right'
+            : item.corner === 'bottomLeft'
+            ? 'bottom left'
+            : item.corner === 'bottomRight'
+            ? 'bottom right'
+            : 'center center');
 
-      {/* DEPTH 3: FOREGROUND VERY LARGE HERO BLOOMS & LEAF CLUSTERS EMERGING FROM OFF-SCREEN (Z-50) */}
-      <div className="absolute inset-0 z-50 pointer-events-none">
-        {botanicalSceneConfig.foregroundFlowers.map((fl) => {
-          const url = getAssetUrl(fl.assetCategory, fl.assetKey);
-          if (!url) return null;
+        const wrapperStyle = {
+          position: 'absolute',
+          top: item.top,
+          bottom: item.bottom,
+          left: item.left,
+          right: item.right,
+          width: item.width || 'auto',
+          height: item.height || 'auto',
+          opacity: item.opacity !== undefined ? item.opacity : 1,
+          zIndex: item.zIndex || 1,
+          transform: `rotate(${item.rotation || 0}deg)`,
+          transformOrigin,
+        };
 
-          const style = {
-            position: 'absolute',
-            top: fl.top,
-            bottom: fl.bottom,
-            left: fl.left,
-            right: fl.right,
-            width: fl.width || fl.size,
-            height: fl.height || 'auto',
-            transform: `rotate(${fl.rotation || 0}deg)`,
-            transformOrigin: fl.side === 'right' ? 'center right' : 'center left',
-            opacity: fl.opacity,
-          };
+        const isShadow = item.assetCategory && item.assetCategory.startsWith('shadows');
 
-          return (
-            <div
-              key={fl.id}
-              id={fl.id}
-              style={style}
-              className="transition-all transform-gpu pointer-events-none"
-            >
-              <img
-                src={url}
-                alt=""
-                className="w-full h-auto object-contain filter drop-shadow-[0_14px_28px_rgba(139,118,104,0.36)]"
-              />
-            </div>
-          );
-        })}
-      </div>
+        return (
+          <div
+            key={item.id}
+            id={item.id}
+            style={wrapperStyle}
+            className="transform-gpu pointer-events-none"
+          >
+            <img
+              src={url}
+              alt=""
+              className={`w-full h-full object-contain ${
+                isShadow
+                  ? 'filter blur-[1px]'
+                  : 'filter drop-shadow-[0_12px_24px_rgba(139,118,104,0.28)]'
+              }`}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
